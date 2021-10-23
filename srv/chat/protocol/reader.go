@@ -19,7 +19,6 @@ func NewCommandReader(reader io.Reader) *CommandReader {
 func (r *CommandReader) Read() (interface{}, error) {
 	// Read the first part
 	commandName, err := r.reader.ReadString(' ')
-
 	if err != nil {
 		return nil, err
 	}

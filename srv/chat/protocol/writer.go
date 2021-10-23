@@ -17,7 +17,6 @@ func NewCommandWriter(writer io.Writer) *CommandWriter {
 
 func (w *CommandWriter) writeString(msg string) error {
 	_, err := w.writer.Write([]byte(msg))
-
 	return err
 }
 

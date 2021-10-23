@@ -40,10 +40,6 @@ func (s *FuzeServer) Run() error {
 
 	s.listener = listener
 
-	// spin := spinner.New(spinner.CharSets[13], 100*time.Millisecond)
-	// spin.Start()
-	log.Printf("listen ok!")
-
 	return nil
 }
 
@@ -70,15 +66,6 @@ func (s *FuzeServer) RetrieveFile() error {
 }
 
 func (s *FuzeServer) StartChatServer() {
-	app := app.NewApp()
-
-	YourIPs, err := app.RetrieveIP()
-	if err != nil {
-		log.Fatalf("Exit retrieving IP with error: %v", err)
-	}
-
-	// Annouce your RoomIP to welcome connection
-	app.Announce(YourIPs)
 	s.chatter.Start(s.listener)
 }
 
